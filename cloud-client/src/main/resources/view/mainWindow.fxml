@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.geekbrains.client.controller.MainController">
+    <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints minHeight="10.0" prefHeight="30.0" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" />
+    </rowConstraints>
+    <children>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+            <padding>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </padding>
+            <GridPane.margin>
+                <Insets />
+            </GridPane.margin>
+            <children>
+                <Label text="Локальное хранилище" />
+            </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="1">
+
+
+            <children>
+                <ComboBox fx:id="localDisksBox" onAction="#selectDiskActionLocal" prefWidth="60.0" />
+                <TextField fx:id="localPathField" editable="false" HBox.hgrow="ALWAYS" />
+                <Button fx:id="localBtnPathUp" mnemonicParsing="false" onAction="#btnPathUpAction" text="Вверх" />
+            </children>
+            <padding>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </padding>
+        </HBox>
+        <!--        <TextField fx:id="commandTextField">-->
+        <!--            <GridPane.margin>-->
+        <!--                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />-->
+        <!--            </GridPane.margin>-->
+        <!--        </TextField>-->
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
+            <children>
+                <Label text="Сетевое хранилище" />
+            </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <padding>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </padding>
+            <children>
+                <TextField fx:id="cloudPathField" editable="false" HBox.hgrow="ALWAYS" />
+                <Button fx:id="cloudBtnPathUp" mnemonicParsing="false" onAction="#btnPathUpAction" text="Вверх" />
+            </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="2">
+            <padding>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </padding>
+            <children>
+                <TableView fx:id="localFilesTable" prefHeight="200.0" prefWidth="200.0" onMouseClicked="#FilesTableClick" HBox.hgrow="ALWAYS">
+
+                </TableView>
+            </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <padding>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </padding>
+            <children>
+                <TableView fx:id="cloudFilesTable" prefHeight="200.0" prefWidth="200.0" onMouseClicked="#FilesTableClick" HBox.hgrow="ALWAYS">
+
+                </TableView>
+            </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="3">
+            <padding>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </padding>
+            <children>
+                <Button alignment="CENTER" mnemonicParsing="false" text="Загрузить из сетевого хранилища">
+                    <HBox.margin>
+                        <Insets bottom="10.0" top="5.0" />
+                    </HBox.margin>
+                </Button>
+            </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <padding>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </padding>
+            <children>
+                <Button alignment="CENTER" mnemonicParsing="false" text="Отправить в сетевое хранилище">
+                    <HBox.margin>
+                        <Insets bottom="10.0" top="5.0" />
+                    </HBox.margin>
+                </Button>
+            </children>
+        </HBox>
+    </children>
+</GridPane>
